@@ -1,0 +1,144 @@
+<html>
+  
+  
+  
+      <head>
+       <!-- Esto son los estilos usados, no es objeto del ejecicio -->
+          <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+          <link href="https://v4-alpha.getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+      <!-- Tipo de caracteres, compatibilidad y etiqueta basica de responsive -->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Titulo-->
+          <title>MedicTripBD</title>
+      </head>
+  
+      <body style="background-color: blanchedalmond" >
+  
+          <div  class="lead" class="container" style="padding: 50px" >
+              <h1 style="color: #0f52ba" >MedicTrip</h1>
+                     
+  
+                      <p>
+                         Busqueda paciente:
+                      </p>
+                      <button id='boton' onclick="BuscarData()">Buscar Paciente</button>
+  
+                          <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="nombre">
+                      ......
+                  </h2>
+                  
+                      <p>
+                         Busqueda Medico:
+                      </p>
+                      <button id='boton' onclick="BuscarData()">Buscar medico</button>
+                       <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="genero">
+                      .......
+                      </h2>
+  
+                      <p>
+                         Busqueda Historial:
+                      </p>
+                      <button id='boton' onclick="BuscarData()">Buscar Historial</button>
+                      <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="alias">
+                     .......
+                      </h2>
+                      
+  
+                      <p>
+                          Busqueda Horarios:
+                       </p>
+                       <button id='boton' onclick="BuscarData()">Buscar Horarios</button>
+                       <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="alias">
+                      ........
+                       </h2>
+  
+          </div>
+  
+          <footer class="footer">
+            <div class="container">
+              <span class="text-muted">
+             
+              </span>
+              MedicTrip - Bases de datos
+            </div>
+          </footer>
+  
+          <script>
+  
+          // Codigo 
+  /*----------------------------------------------------------------------------------------------------------------------------*/
+              var  nombre;
+              var genero;
+              var alias;
+              var El_Objeto_Completo;
+              var cedula = '21706486';
+              var apellido = 'Guerrero'
+              var urlPOST =  /*URL que usará para enviar info*/
+  
+                  /*  La función Fetch extrae la información de una ruta que le indiquemos.
+                      Dicha función es asincrona y estará esperando una respuesta o un error si la peticion falla.
+                      Este proceso se le denomina Promesas.
+  
+                      Para trbajar las promesas (operaciones que pueden que aun  no terminan pero esperan hacerlo en un futuro)
+                      se usan las funciones then() y catch(), recieniendo por parametros la la información o un error.
+  
+                      Este manejo de promesas es nativo de JavaScript desde la versión ECMAScript 6
+                      y es un buen ejemplo para entender el funcionamiento de las operaciones REST y las promesas.
+  
+                      Favor Investigar todos los terminos usados:
+                          - REST Operations
+                          - Json
+                          - Promesas
+                          - ECMAScript
+                  */
+  
+      /*----------------------------------------------------------------------------------------------------------------------------*/
+  
+  
+                 function BuscarData() {
+  
+                  fetch('https://anapioficeandfire.com/api/characters/583').then( (respuesta) => respuesta.json() ) // Transformamos la respuesta a un objeto Json para poder 
+                  .then( function (data) { // Al momento de convertir nuestra respuesta en un objeto Json ya podemos usar la data
+                      console.log(data);  // Abrir consola y ver resultado de la variable data
+                      nombre= data.name ; // La variable nombre es igual al atributo name de la data
+                      genero= data.gender;
+                      alias=data.aliases[0];
+                      document.getElementById("nombre").innerHTML = nombre; // Modificamos el elemento HTML con el id nombre
+                      document.getElementById("genero").innerHTML = genero; //Modificamos el elemento HTML con el id genero
+                      document.getElementById("alias").innerHTML = alias; //Modificamos el elemento HTML con el id alias
+  
+                      data['apellido'] = apellido;
+                      data['cedula'] = cedula;
+                     
+                      El_Objeto_Completo = data; // También podemos agarrar toda la data y guardarla dentro de un objeto JS
+                      //La variable el objeto completo tiene toda la data. Jueguen mostrando más atributos de la misma.
+  
+  
+                      fetch(urlPOST, {  
+                       method: 'post',  
+                       headers: {  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  },  
+                       body: JSON.stringify(data),  
+                     })
+                      .then(El_Objeto_Completo)  
+                      .then(function (data) {  
+                        console.log('Request succeeded with JSON response', data);  
+                      })  
+                      .catch(function (error) {  
+                        console.log('Request failed', error);  
+                      });
+  
+  
+  
+  
+  
+                      })
+              }
+      /*----------------------------------------------------------------------------------------------------------------------------*/
+  
+          </script>
+  
+        
+  </html>
+  
