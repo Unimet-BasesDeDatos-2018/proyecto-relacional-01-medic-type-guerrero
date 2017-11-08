@@ -1,144 +1,74 @@
-<html>
-  
-  
-  
-      <head>
-       <!-- Esto son los estilos usados, no es objeto del ejecicio -->
-          <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-          <link href="https://v4-alpha.getbootstrap.com/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
-      <!-- Tipo de caracteres, compatibilidad y etiqueta basica de responsive -->
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Titulo-->
-          <title>MedicTripBD</title>
-      </head>
-  
-      <body style="background-color: blanchedalmond" >
-  
-          <div  class="lead" class="container" style="padding: 50px" >
-              <h1 style="color: #0f52ba" >MedicTrip</h1>
-                     
-  
-                      <p>
-                         Busqueda paciente:
-                      </p>
-                      <button id='boton' onclick="BuscarData()">Buscar Paciente</button>
-  
-                          <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="nombre">
-                      ......
-                  </h2>
-                  
-                      <p>
-                         Busqueda Medico:
-                      </p>
-                      <button id='boton' onclick="BuscarData()">Buscar medico</button>
-                       <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="genero">
-                      .......
-                      </h2>
-  
-                      <p>
-                         Busqueda Historial:
-                      </p>
-                      <button id='boton' onclick="BuscarData()">Buscar Historial</button>
-                      <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="alias">
-                     .......
-                      </h2>
-                      
-  
-                      <p>
-                          Busqueda Horarios:
-                       </p>
-                       <button id='boton' onclick="BuscarData()">Buscar Horarios</button>
-                       <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" id="alias">
-                      ........
-                       </h2>
-  
-          </div>
-  
-          <footer class="footer">
-            <div class="container">
-              <span class="text-muted">
-             
-              </span>
-              MedicTrip - Bases de datos
-            </div>
-          </footer>
-  
-          <script>
-  
-          // Codigo 
-  /*----------------------------------------------------------------------------------------------------------------------------*/
-              var  nombre;
-              var genero;
-              var alias;
-              var El_Objeto_Completo;
-              var cedula = '21706486';
-              var apellido = 'Guerrero'
-              var urlPOST =  /*URL que usará para enviar info*/
-  
-                  /*  La función Fetch extrae la información de una ruta que le indiquemos.
-                      Dicha función es asincrona y estará esperando una respuesta o un error si la peticion falla.
-                      Este proceso se le denomina Promesas.
-  
-                      Para trbajar las promesas (operaciones que pueden que aun  no terminan pero esperan hacerlo en un futuro)
-                      se usan las funciones then() y catch(), recieniendo por parametros la la información o un error.
-  
-                      Este manejo de promesas es nativo de JavaScript desde la versión ECMAScript 6
-                      y es un buen ejemplo para entender el funcionamiento de las operaciones REST y las promesas.
-  
-                      Favor Investigar todos los terminos usados:
-                          - REST Operations
-                          - Json
-                          - Promesas
-                          - ECMAScript
-                  */
-  
-      /*----------------------------------------------------------------------------------------------------------------------------*/
-  
-  
-                 function BuscarData() {
-  
-                  fetch('https://anapioficeandfire.com/api/characters/583').then( (respuesta) => respuesta.json() ) // Transformamos la respuesta a un objeto Json para poder 
-                  .then( function (data) { // Al momento de convertir nuestra respuesta en un objeto Json ya podemos usar la data
-                      console.log(data);  // Abrir consola y ver resultado de la variable data
-                      nombre= data.name ; // La variable nombre es igual al atributo name de la data
-                      genero= data.gender;
-                      alias=data.aliases[0];
-                      document.getElementById("nombre").innerHTML = nombre; // Modificamos el elemento HTML con el id nombre
-                      document.getElementById("genero").innerHTML = genero; //Modificamos el elemento HTML con el id genero
-                      document.getElementById("alias").innerHTML = alias; //Modificamos el elemento HTML con el id alias
-  
-                      data['apellido'] = apellido;
-                      data['cedula'] = cedula;
-                     
-                      El_Objeto_Completo = data; // También podemos agarrar toda la data y guardarla dentro de un objeto JS
-                      //La variable el objeto completo tiene toda la data. Jueguen mostrando más atributos de la misma.
-  
-  
-                      fetch(urlPOST, {  
-                       method: 'post',  
-                       headers: {  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  },  
-                       body: JSON.stringify(data),  
-                     })
-                      .then(El_Objeto_Completo)  
-                      .then(function (data) {  
-                        console.log('Request succeeded with JSON response', data);  
-                      })  
-                      .catch(function (error) {  
-                        console.log('Request failed', error);  
-                      });
-  
-  
-  
-  
-  
-                      })
-              }
-      /*----------------------------------------------------------------------------------------------------------------------------*/
-  
-          </script>
-  
-        
-  </html>
-  
+<!-- Default home page -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600' rel='stylesheet' type='text/css'>
+<style>
+  /* Styles included inline since you'll probably be deleting this page anyway */
+  html,body{text-align:left;font-size:1em}html,body,img,form,textarea,input,fieldset,div,p,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code{margin:0;padding:0}ul,li{list-style:none}img{display:block}a img{border:0}a{text-decoration:none;font-weight:normal;font-family:inherit}*:active,*:focus{outline:0;-moz-outline-style:none}h1,h2,h3,h4,h5,h6{font-weight:normal}div.clear{clear:both}.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}body{font-family:"Open Sans",Arial,sans-serif;font-weight:300;}.top-bar {width: 100%; background-color: #e4f0f1; padding: 15px 0;}.top-bar .container img {float: left;}.top-bar .container ul {float: right; padding-top: 25px;}.top-bar .container li {float: left; width: 125px; text-align: center; font-size: 15px; color:#000; font-weight: 600;}.top-bar .container a li:hover {color: #118798; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}.container{width: 80%; max-width: 1200px; margin: auto;}div.header {-webkit-transition: 6s; -moz-transition: 6s; -o-transition: 6s;transition: 6s; background: rgba(4, 36, 41, 0.89) url(http://sailsjs.org/images/img_sailsShadow.png) no-repeat 42% bottom; padding: 100px 0 65px;}.header h1#main-title{color: #fff; font-weight: 300; font-size: 2.5em;}.header h3{color: #b1eef7; font-style: italic; font-weight: 300;}.header h3 code{font-style: normal!important; background-color: rgba(255,255,255,0.5); font-weight: 300; color:#0e6471; margin: 0px 5px;}div.main.container{padding: 50px 0;}h1 {color: #118798; font-weight: 300;}code {font-size: inherit; font-family: 'Consolas', 'Monaco', monospace; padding:4px 5px 1px; background-color: #f3f5f7}a{color: #118798; font-weight: 300; text-decoration: underline;}a:hover {color: #0e6471; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}p{line-height: 1.5em;}blockquote{background-color: #e4f0f1; padding: 25px; line-height: 1.5em; margin: 15px 0;}blockquote span{font-weight: 600; padding-right: 5px;}ul.getting-started{padding: 25px 75px 25px 0; width: 70%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}ul.getting-started li{padding: 25px 0;}ul.getting-started li h3 {padding-bottom: 10px; font-size: 25px; font-weight: 300;}.sprite{background:url(http://sailsjs.org/images/newapp.sprite.png) no-repeat; position: absolute; left: 0; top:0;}.getting-started .sprite{margin-left:10px;padding-left:60px;height:42px;width:0; float: left;}.getting-started .one{background-position:0 0}.getting-started .two{background-position:0 -42px}.getting-started .three{background-position:0 -83px}div.step {position: relative; padding-left: 70px; opacity: 0.9;}div.step:hover{ opacity: 1;}div.links {float: left; width: 30%; max-width: 325px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f3f5f7; border: 1px solid #ebebeb; padding: 25px 45px 35px;}div.links h3 {color: #727272; text-align: center; font-size: 28px; font-weight: 300;}div.links h4 {color: #727272; font-size: 17px; font-weight: 600; padding: 15px 0 10px;}div.links .link-list a {text-decoration: none; font-weight: 400;}div.links .link-list a li {padding: 0px 0px 5px 10px;}div.default-page{min-width: 1200px;}.pocket{display:none;}
+</style>
+<script type="text/javascript">
+setTimeout(function sunrise () {
+  document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
+}, 0);
+</script>
+
+<div class="default-page">
+  <div class="header">
+    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
+    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+  </div>
+  <div class="main container clearfix">
+    <!-- <h1>Getting started</h1>
+    <p>Don't worry, we've got your back.</p> -->
+    <ul class="getting-started">
+      <li class="clearfix">
+        <div class="step">
+          <div class="sprite one"></div>
+          <h3>Generate a REST API.</h3>
+          <p>
+            Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.org/#!/documentation/concepts/ORM/Models.html">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.org/#!/documentation/concepts/Controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
+          </p>
+        </div>
+      </li>
+      <li class="clearfix">
+        <div class="step">
+          <div class="sprite two"></div>
+          <h3>
+            Lift your app.
+          </h3>
+          <p>
+            Run <code>sails lift</code> to start up your app server.  If you visit <a target="_blank" href="http://localhost:<%= sails.config.port || 1337%>/user"><code>http://localhost:<%= sails.config.port || 1337%>/user</code></a> in your browser, you'll see a <a href="http://sailsjs.org/#!/documentation/reference/blueprint-api">WebSocket-compatible</a> user API.
+          </p>
+        </div>
+      </li>
+      <li class="clearfix">
+        <div class="step">
+          <div class="sprite three"></div>
+          <h3>
+            Dive in.
+          </h3>
+          <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.org/#!/documentation/concepts/Routes">routes</a>, set up <a href="http://sailsjs.org/#!/documentation/concepts/Policies">security policies</a>, configure your <a href="http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/Controllers?q=actions">controller actions</a>. For more help getting started, check out the links on this page.</p>
+
+        </div>
+      </li>
+    </ul>
+    <div class="links">
+      <!-- <h3>Links</h3> -->
+      <ul class="link-list">
+
+        <h4>Docs</h4>
+        <a target="_blank" href="http://sailsjs.org/#!/documentation/anatomy/myApp"><li>App Structure</li></a>
+        <a target="_blank" href="http://sailsjs.org/#!/documentation/reference"><li>Reference</li></a>
+        <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/extending-sails/Adapters/adapterList.html"><li>Supported Databases</li></a>
+
+        <h4>Tutorials</h4>
+        <a target="_blank" href="https://github.com/sails101"><li>Sails 101</li></a>
+
+        <h4>Community</h4>
+        <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
+        <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
+        <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
+        <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
+
+      </ul>
+    </div>
+  </div>
+</div>
