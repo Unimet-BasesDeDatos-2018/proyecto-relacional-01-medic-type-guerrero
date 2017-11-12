@@ -34,7 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  //'get  /Paciente/show*' : 'PacienteController.show'
 
   /***************************************************************************
   *                                                                          *

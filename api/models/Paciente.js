@@ -8,7 +8,21 @@
 module.exports = {
 
   attributes: {
+    cedula:{
+      type: 'int'
+    },
+    nombre:{
+      type: 'string'
+    },
+    apellido:{
+      type: 'string'
+    },
+    fecha:{
+      type: 'date'
+    },
+    direccion:{
+      type: 'string'
+    }
 
   }
 };
-
