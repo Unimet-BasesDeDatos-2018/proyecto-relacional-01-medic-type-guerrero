@@ -35,7 +35,24 @@ paciente:paciente
 					paciente:paciente
 				});
 			});
-		}
+		},
+edit: function(req,res,next){
+	Paciente.findOne(req.param('id'),function foundPaciente(err,paciente){
+		if (err) return next(err);
+		if (!paciente) return next();
 
+		res.view({
+			paciente:paciente
+		});
+	});
+},
+update:function(req,res,next){
+	Paciente.update(req.param('id'),req.params.all(),function pacienteUpdated(err){
+		if (err){
+			return res.redirect('/Paciente/edit/'+req.param('id'));
+		}
+		res.redirect('/Paciente/show/'+req.param('id'));
+	});
+}
 
 };
