@@ -53,6 +53,11 @@ update:function(req,res,next){
 		}
 		res.redirect('/Paciente/show/'+req.param('id'));
 	});
+},
+destroy: function(req,res,next){
+Paciente.destroy(req.param('id')).exec( function(){
+	res.redirect('/Paciente');
+});
 }
 
 };
