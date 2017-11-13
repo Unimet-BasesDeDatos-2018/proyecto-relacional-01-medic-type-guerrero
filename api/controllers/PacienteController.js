@@ -27,6 +27,14 @@ paciente:paciente
 				});
 			});
 
+		},
+		index: function(req,res,next){
+			Paciente.find(function foundPaciente(err,paciente){
+				if (err) return next(err);
+				res.view({
+					paciente:paciente
+				});
+			});
 		}
 
 
