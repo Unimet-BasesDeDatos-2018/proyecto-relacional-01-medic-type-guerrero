@@ -21,7 +21,7 @@ module.exports = {
 	create: function(req,res,next) {
 		Especialidad.create(req.params.all(),function especialidadCreado(err,especialidad) {
 			if (err) return next(err);
-			res.json(especialidad);
+		res.json(especialidad);
 
 		});
 	},

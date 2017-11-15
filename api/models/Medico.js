@@ -31,6 +31,10 @@ module.exports = {
 horario:{
   collection: 'horario',
   via:'medico'
+},
+especialidad:{
+  collection: 'especialidad',
+  via:'medico'
 }
   }
 

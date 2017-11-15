@@ -16,7 +16,7 @@ module.exports = {
     especialidad:{
       type:'String',
       required:true,
-    
+
     },
     medico:{
       model:'medico',

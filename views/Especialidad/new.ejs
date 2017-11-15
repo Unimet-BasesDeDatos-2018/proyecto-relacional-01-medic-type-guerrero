@@ -2,6 +2,10 @@
   <h2> Agregar Nueva Especialidad Para <%= medico.nombre+" "+medico.apellido %></h2>
 
   <input type="hidden" name="medico" value="<%-medico.id %>"/>
-  <input type="text" placeholder="especialidad " name="especialidad"><br />
+  <input type="radio" name="especialidad" value="Pediatra"> Pediatra<br />
+  <input type="radio" name="especialidad" value="Cardiologo"> Cardiologo<br />
+  <input type="radio" name="especialidad" value="Internista"> Pediatra<br />  
   <input type="submit" value="agregar Especialidad"/>
+
+
 </form>
