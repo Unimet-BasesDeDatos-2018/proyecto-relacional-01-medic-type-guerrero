@@ -1,0 +1,7 @@
+<form action="/Especialidad/create" method="POST">
+  <h2> Agregar Nueva Especialidad Para <%= medico.nombre+" "+medico.apellido %></h2>
+
+  <input type="hidden" name="medico" value="<%-medico.id %>"/>
+  <input type="text" placeholder="especialidad " name="especialidad"><br />
+  <input type="submit" value="agregar Especialidad"/>
+</form>

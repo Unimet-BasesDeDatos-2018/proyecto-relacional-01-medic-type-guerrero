@@ -8,7 +8,22 @@
 module.exports = {
 
   attributes: {
+    id:{
+      type: 'integer',
+       primaryKey: true,
+      autoIncrement:true
+    },
+    especialidad:{
+      type:'String',
+      required:true,
+    
+    },
+    medico:{
+      model:'medico',
+      required:true
+
+    }
+
 
   }
 };
-

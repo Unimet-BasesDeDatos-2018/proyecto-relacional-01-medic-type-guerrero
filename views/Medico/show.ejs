@@ -9,6 +9,11 @@
 <h4><%= 'Dirección: ' +medico.direccion %></h1>
 <hr>
 
+<form action="/Especialidad/new" method="POST">
+  <input type="hidden" value= "<%= medico.id %>" name="medico">
+  <input type="submit" value= "Agregar Especialidad" />
+</form>
+
 <form action="/Horario/new" method="POST">
   <input type="hidden" value= "<%= medico.id %>" name="medico">
   <input type="submit" value= "Agregar Bloque" />
