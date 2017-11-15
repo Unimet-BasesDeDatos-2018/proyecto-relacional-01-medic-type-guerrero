@@ -1,4 +1,4 @@
-<form action="/Paciente/update/<%= paciente.id %>" method="POST">
+  <form action="/Paciente/update/<%= paciente.id %>" method="POST">
   <h2>Editar Informacion</h2>
   <h5> Cedula</h5>
   <input value="<%= paciente.cedula%>" type="int" name="cedula"><br />
@@ -7,7 +7,7 @@
     <h5> Apellido</h5>
   <input value="<%= paciente.apellido%>" type="text" name="apellido"><br />
     <h5> Fecha de Nacimiento</h5>
-  <input value="<%= paciente.fecha%>" type="datetime-local" name="fecha"><br />
+  <input value="<%= paciente.fecha%>" type="date" name="fecha"><br />
     <h5> Dirección</h5>
   <input value="<%= paciente.direccion%>" type="text" name="direccion"><br />
   <input type="submit" value="Editar Paciente" />

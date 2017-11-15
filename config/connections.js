@@ -45,7 +45,7 @@ module.exports.connections = {
     host      : 'localhost',
     port      : 3306,
     user      : 'medictype',
-    password  : 'password',
+    password  : 'bangtan0613',
     database  : 'medictype'
 
 
