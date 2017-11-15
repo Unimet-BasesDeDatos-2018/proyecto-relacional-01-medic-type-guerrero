@@ -13,3 +13,25 @@
   <input type="hidden" value= "<%= medico.id %>" name="medico">
   <input type="submit" value= "Agregar Bloque" />
 </form>
+
+<h3> Horario</h3>
+<table>
+<tr>
+  <th> ID </th>
+  <th> Bloque Horario </th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+<% _.each(medico.horario,function(horario){ %>
+  <tr data=id="<%= horario.id %>" data-model="horario">
+  <td><%= horario.id %></td>
+  <td><%= horario.bloquehorario %></td>
+
+
+  <td><a href="Horario/show/<%= horario.id %>">Mostrar</a></td>
+  <td><a href="Horario/edit/<%= horario.id %>">Editar  </a></td>
+  <td><a href="Horario/destroy/<%= horario.id %>">Eliminar</a></td>
+</tr>
+<% }) %>
+</table>

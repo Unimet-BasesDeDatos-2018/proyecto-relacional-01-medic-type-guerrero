@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	'new': function(req,res,next){
+	'new': function(req,res,err){
 		Medico.findOne(req.param('medico'),function foundMedico (err,medico){
 			if (err) return next(err);
 			if (!medico) return next();
@@ -21,7 +21,7 @@ module.exports = {
 	create: function(req,res,next) {
 		Horario.create(req.params.all(),function horarioCreado(err,horario) {
 			if (err) return next(err);
-			res.json(horario);
+			res.redirect('/Medico/show/'+horario.medico);
 
 		});
 	},

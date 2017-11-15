@@ -17,7 +17,8 @@ module.exports = {
 		});
 	},
 			show: function(req,res,next) {
-				Medico.findOne(req.param('id'),function medicoEncontrado(err,medico){
+
+				Medico.findOne(req.param('id')).populateAll().exec(function(err,medico){
 					if (err) return next(err);
 					if (!medico) return next();
 					res.view({
@@ -25,7 +26,7 @@ module.exports = {
 					});
 				});
 
-			},
+		},
 			index: function(req,res,next){
 				Medico.find(function foundMedico(err,medico){
 					if (err) return next(err);
