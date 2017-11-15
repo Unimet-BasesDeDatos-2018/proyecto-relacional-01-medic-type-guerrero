@@ -9,6 +9,41 @@ module.exports = {
 
   attributes: {
 
-  }
-};
 
+      id:{
+        type:'interger'
+      },
+
+      medico:{
+        model:'Medico',
+        requiere:true
+
+      },
+      paciente:{
+        model: 'Paciente',
+        requiere:true
+      },
+      observaciones:{
+        type: 'string'
+      },
+      altura:{
+        type: 'string'
+      },
+      peso:{
+        type: 'string'
+      },
+      fecha:{
+        type: 'date'
+      },
+      diagnostico:{
+        type: 'string'
+      },
+cita:
+{
+  model:'Cita',
+  requiere: true
+}
+    }
+
+
+};

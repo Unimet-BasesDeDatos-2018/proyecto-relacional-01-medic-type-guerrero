@@ -8,6 +8,11 @@
 module.exports = {
 
   attributes: {
+    id:{
+      type: 'integer',
+       primaryKey: true,
+      autoIncrement:true
+    },
     cedula:{
       type: 'integer'
     },
@@ -22,7 +27,8 @@ module.exports = {
     },
     direccion:{
       type: 'string'
-    }
+    },
+
 
   }
 };

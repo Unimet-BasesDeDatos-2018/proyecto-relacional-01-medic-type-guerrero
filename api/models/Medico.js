@@ -9,6 +9,18 @@ module.exports = {
 
   attributes: {
 
+      id:{
+        type: 'integer',
+        primaryKey: true,
+        autoIncrement:true
+      },
+      nombre:{
+        type: 'string'
+      },
+      NumConsultorio:{
+        type: 'integer'
+      },
+    
+    // Nose como manejar los horarios son tablas separadas no los puedo relacionar con otro modelo
   }
 };
-
