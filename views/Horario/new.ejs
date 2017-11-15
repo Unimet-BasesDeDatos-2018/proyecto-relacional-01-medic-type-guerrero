@@ -1,0 +1,7 @@
+<form action="/Horario/create" method="POST">
+  <h2> Agregar Nuevo Bloque Horario Para <%= medico.nombre %></h2>
+
+  <input type="hidden" name="medico" value="<%-medico.id %>"/>
+  <input type="text" placeholder="Bloque Horario " name="bloquehorario"><br />
+  <input type="submit" value="agregar nuevo bloque horario"/>
+</form>

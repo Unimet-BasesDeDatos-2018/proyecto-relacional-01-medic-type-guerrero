@@ -1,0 +1,14 @@
+  <form action="/Medico/update/<%= paciente.id %>" method="POST">
+  <h2>Editar Informacion</h2>
+  <h5> Cedula</h5>
+  <input value="<%= medico.cedula%>" type="int" name="cedula"><br />
+    <h5> Nombre</h5>
+  <input value="<%= medico.nombre%>" type="text" name="nombre"><br />
+    <h5> Apellido</h5>
+  <input value="<%= medico.apellido%>" type="text" name="apellido"><br />
+    <h5> Fecha de Nacimiento</h5>
+  <input value="<%= medico.fecha%>" type="date" name="fecha"><br />
+    <h5> Dirección</h5>
+  <input value="<%= medico.direccion%>" type="text" name="direccion"><br />
+  <input type="submit" value="Editar Paciente" />
+</form>

@@ -1,0 +1,15 @@
+<h1><%= 'Nombre: '+medico.nombre %></h1>
+<hr>
+<h1><%= 'Apellido: '+medico.apellido %></h1>
+<hr>
+<h2><%= 'Cedula: '+medico.cedula %></h1>
+<hr>
+<h3><%= 'Fecha de Nacimiento: '+medico.fecha%></h1>
+<hr>
+<h4><%= 'Dirección: ' +medico.direccion %></h1>
+<hr>
+
+<form action="/Horario/new" method="POST">
+  <input type="hidden" value= "<%= medico.id %>" name="medico">
+  <input type="submit" value= "Agregar Bloque" />
+</form>

@@ -1,0 +1,25 @@
+<h3>Medicos</h3>
+<table>
+  <tr>
+  <th>ID</th>
+  <th>Cedula</th>
+  <th>Nombre</th>
+  <th>Apellido</th>
+
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+<% _.each(medico,function(medico){ %>
+  <tr data=id="<%= medico.id %>" data-model="medico">
+  <td><%= medico.id %></td>
+  <td><%= medico.cedula %></td>
+  <td><%= medico.nombre %></td>
+  <td><%= medico.apellido %></td>
+
+  <td><a href="Medico/show/<%= medico.id %>">Mostrar</a></td>
+  <td><a href="Medico/edit/<%= medico.id %>">Editar  </a></td>
+  <td><a href="Medico/destroy/<%= medico.id %>">Eliminar</a></td>
+</tr>
+<% }) %>
+</table>
