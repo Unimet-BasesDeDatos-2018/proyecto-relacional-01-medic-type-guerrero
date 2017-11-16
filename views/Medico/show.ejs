@@ -54,17 +54,24 @@ body{
 <h4><%= 'Dirección: ' +medico.direccion %></h1>
 <hr>
 
-
-
-
+<form action="/Especialidad/new" method="POST">
+  <input type="hidden" value= "<%= medico.id %>" name="medico">
+  <input type="submit" value= "Agregar Especialidad" />
+</form>
 
 </div>
+
+
+
+
+
+
 <div id="container">
   <form action="/Horario/new" method="POST">
     <input type="hidden" value= "<%= medico.id %>" name="medico">
-    <input type="submit" value= "Agregar Bloque" />
-  </form>
-<h3> Horario</h3>
+    
+
+    <h3> Horario</h3>
 <table>
 <tr>
   <th> ID </th>
@@ -83,13 +90,13 @@ body{
 </tr>
 <% }) %>
 </table>
-<form action="/Especialidad/new" method="POST">
-  <input type="hidden" value= "<%= medico.id %>" name="medico">
-  <input type="submit" value= "Agregar Especialidad" />
-</form>
+
+<input type="submit" value= "Agregar Bloque" />
+  </form>
+
+
 
 </div>
 <div id="container">
 <a class="button" href="/Medico"> Regresar </a>
-<a class="button" href="/Medico/edit/%=medico.id%"> Editar </a>(help)
 </div>

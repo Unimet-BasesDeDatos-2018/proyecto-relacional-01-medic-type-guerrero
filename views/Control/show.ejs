@@ -1,3 +1,54 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body{
+	padding: 50px;
+  background-color:#003471;
+}
+	#header{
+  font-family: Barlow', sans-serif;
+  color: #FBFFB0;
+  padding-left: 30%;
+}
+.button{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  font-family:'Trebuchet MS', sans-serif;
+  float: center;
+	border-radius: 10px;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.button{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+#container {
+	max-width: 100px;
+	min-width: 960px;
+	position: relative;
+  text-align:center;
+	margin-top: 1.75em;
+        margin-bottom: 2em;
+        margin: auto;
+	padding: 3em;
+	border: 5px double #000000;
+	border-color: #012148;
+	background-color: #FBFFB0; 
+	font-family: Barlow, sans-serif;
+}
+
+
+</style>
+
+<div id="container">
+
 <h4><%= 'ID Control '+control.id %></h1>
 <hr>
 <h4><%= 'ID Cita: '+control.cita %></h1>
@@ -16,3 +67,4 @@
 <hr>
 <h4><%= 'diagnostico '+control.diagnostico %></h1>
 <hr>
+</div>

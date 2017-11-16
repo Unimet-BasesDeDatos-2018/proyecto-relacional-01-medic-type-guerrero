@@ -1,6 +1,59 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body{
+  padding: 50px;
+  background-color:#003471;
+}
+  #header{
+  font-family: Barlow', sans-serif;
+  color: #FBFFB0;
+  padding-left: 30%;
+}
+.button{
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  font-family:'Trebuchet MS', sans-serif;
+  float: center;
+  border-radius: 10px;
+  font-size: 25px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.button{
+  background-color: #3498DB;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+}
+
+#container {
+  max-width: 100px;
+  min-width: 960px;
+  position: relative;
+  text-align:center;
+  margin-top: 1.75em;
+        margin-bottom: 2em;
+        margin: auto;
+  padding: 3em;
+  border: 5px double #000000;
+  border-color: #012148;
+  background-color: #FBFFB0; 
+  font-family: Barlow, sans-serif;
+}
+
+
+</style>
+
+<div id="container">
+
 <form action="/Horario/create" method="POST">
   <h2> Agregar Nuevo Bloque Horario Para <%= medico.nombre+" "+medico.apellido %></h2>
-
+</div>
+<div id="container">
+<h4> Lunes </h4> 
 <hr>
   <input type="hidden" name="medico" value="<%-medico.id %>"/>
  <input type="radio" name="bloquehorario" value="Lunes 7-8"> Lunes 7-8
@@ -12,7 +65,9 @@
   <input type="radio" name="bloquehorario" value="Lunes 2-3"> Lunes 2-3
   <input type="radio" name="bloquehorario" value="Lunes 3-4"> Lunes 3-4
   <input type="radio" name="bloquehorario" value="Lunes 5-6"> Lunes 4-5<br />
-
+</div>
+<div id="container">
+<h4> Martes </h4> 
   <hr>
   <input type="radio" name="bloquehorario" value="Martes 7-8"> Martes 7-8
   <input type="radio" name="bloquehorario" value="Martes 8-9"> Martes 8-9
@@ -24,6 +79,9 @@
   <input type="radio" name="bloquehorario" value="Martes 3-4"> Martes 3-4
   <input type="radio" name="bloquehorario" value="Martes 4-5"> Martes 4-5 <br />
   <hr>
+</div>
+<div id="container">
+<h4> Miercoles </h4> 
   <input type="radio" name="bloquehorario" value="Miercoles 7-8"> Miercoles 7-8
   <input type="radio" name="bloquehorario" value="Miercoles 8-9"> Miercoles 8-9
   <input type="radio" name="bloquehorario" value="Miercoles 9-10"> Miercoles 9-10
@@ -34,6 +92,9 @@
   <input type="radio" name="bloquehorario" value="Miercoles 3-4"> Miercoles 3-4
   <input type="radio" name="bloquehorario" value="Miercoles 4-5"> Miercoles 4-5 <br />
   <hr>
+</div>
+<div id="container">
+<h4> Jueves </h4> 
   <input type="radio" name="bloquehorario" value="Jueves 7-8"> Jueves 7-8
   <input type="radio" name="bloquehorario" value="Jueves 8-9"> Jueves 8-9
   <input type="radio" name="bloquehorario" value="Jueves 9-10"> Jueves 9-10
@@ -44,6 +105,9 @@
   <input type="radio" name="bloquehorario" value="Jueves 3-4"> Jueves 3-4
   <input type="radio" name="bloquehorario" value="Jueves 4-5"> Jueves 4-5 <br />
   <hr>
+</div>
+<div id="container">
+<h4> Viernes </h4> 
   <input type="radio" name="bloquehorario" value="Viernes 7-8"> Viernes 7-8
   <input type="radio" name="bloquehorario" value="Viernes 8-9"> Viernes 8-9
   <input type="radio" name="bloquehorario" value="Viernes 9-10"> Viernes 9-10
@@ -54,7 +118,9 @@
   <input type="radio" name="bloquehorario" value="Viernes 3-4"> Viernes 3-4
   <input type="radio" name="bloquehorario" value="Viernes 4-5"> Viernes 4-5 <br />
   <hr>
-
+</div>
+<div id="container">
   <input type="submit" value="Agregar Bloque Horario"/>
 
 </form>
+</div>
