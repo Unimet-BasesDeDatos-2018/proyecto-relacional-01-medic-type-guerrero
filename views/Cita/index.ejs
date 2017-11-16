@@ -1,0 +1,23 @@
+<h3>Citas</h3>
+<table>
+  <tr>
+<th>ID Cita</th>
+  <th>Cedula Paciente</th>
+  <th>Cedula Medico</th>
+  <th>Horario</th>
+
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+<% _.each(cita,function(cita){ %>
+  <tr data=id="<%= cita.id %>" data-model="cita">
+  <td><%= cita.id %></td>
+  <td><%= cita.paciente %></td>
+  <td><%= cita.medico %></td>
+  <td><%= cita.horario %></td>
+
+
+</tr>
+<% }) %>
+</table>

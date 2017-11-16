@@ -1,0 +1,11 @@
+  <form action="/Cita/update/<%= cita.id %>" method="POST">
+  <h2>Editar Informacion</h2>
+  <h5> Cedula Medico</h5>
+  <input value="<%= medico.cedula%>" type="int" name="cedula"><br />
+    <h5> Cedula Paciente</h5>
+  <input value="<%= paciente.cedula%>" type="text" name="cedula"><br />
+    <h5> Horario</h5>
+  <input value="<%= cita.horario%>" type="text" name="horario"><br />
+
+  <input type="submit" value="Editar Cita" />
+</form>
