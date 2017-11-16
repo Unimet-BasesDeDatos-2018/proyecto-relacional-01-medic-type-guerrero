@@ -10,18 +10,15 @@ module.exports = {
   attributes: {
 
 
-      id:{
-        type:'interger'
-      },
+    id:{
+      type: 'integer',
+       primaryKey: true,
+      autoIncrement:true
+    },
 
-      medico:{
-        model:'Medico',
-        requiere:true
-
-      },
-      paciente:{
-        model: 'Paciente',
-        requiere:true
+      cita:{
+        type:'integer',
+        required:true
       },
       observaciones:{
         type: 'string'
@@ -38,11 +35,7 @@ module.exports = {
       diagnostico:{
         type: 'string'
       },
-cita:
-{
-  model:'Cita',
-  requiere: true
-}
+
     }
 
 

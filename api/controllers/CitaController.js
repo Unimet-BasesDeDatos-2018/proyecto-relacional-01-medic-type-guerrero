@@ -8,7 +8,7 @@
 module.exports = {
 	registrar: function(req,res){
 		res.view();
-
+//prueba
 	},
 
 	create: function(req,res,next) {
