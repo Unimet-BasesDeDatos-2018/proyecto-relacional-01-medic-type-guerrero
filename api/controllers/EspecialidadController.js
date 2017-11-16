@@ -29,7 +29,7 @@ module.exports = {
 		});
 	},
 
-	display: function(req, res){
+	/* display: function(req, res){
 		especialidad.query('SELECT Especialidad.especialidad from Especialidad INNER JOIN Medico on Especialidad.medico = req.param('medico'),
 		[list],function(err, rawResults){
 			if (err) {return res.serverError(err);}
@@ -44,4 +44,5 @@ module.exports = {
 			sails.log(rawResults);
 		})
 
+}*/
 };

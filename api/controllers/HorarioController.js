@@ -11,7 +11,7 @@ module.exports = {
 			if (err) return next(err);
 			if (!medico) return next();
 			res.view({
-				horario:horario;
+				horario:horario
 			});
 		});
 
@@ -26,5 +26,5 @@ module.exports = {
 		});
 	},
 
-	index: function()
+
 };
