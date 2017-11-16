@@ -1,10 +1,74 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body{
+  padding: 50px;
+  background-color:#003471;
+}
+  #header{
+  font-family: Barlow', sans-serif;
+  color: #FBFFB0;
+  padding-left: 30%;
+}
+.button{
+  position: relative;
+  padding: 5px 20px;
+  margin: 0px 10px 10px 0px;
+  font-family:Barlow, sans-serif;
+  float: left;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.button{
+  background-color: #3498DB;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+}
+
+#img {
+	padding: 5%;
+	float:right;
+	width:500px;
+	height:auto;
+}
+
+#container {
+  max-width: 100px;
+  min-width: 960px;
+  position: relative;
+  text-align:left;
+  margin-top: 1.75em;
+        margin-bottom: 2em;
+        margin: auto;
+  padding: 3em;
+  border: 5px double #000000;
+  border-color: #012148;
+  background-color: #FBFFB0; 
+  font-family: Barlow, sans-serif;
+}
+
+#spaced{
+	margin:14px;
+}
+
+
+</style>
+<div id="container">
+<img id="img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=750&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
 <form action="/Paciente/create" method="post">
   <h2> Registrar Paciente </h2>
-
-  <input type="int" placeholder="Cedula" name="cedula"><br />
-  <input type="string" placeholder="Nombre" name="nombre"><br />
-  <input type="string" placeholder="Apellido" name="apellido"><br />
-  <input type="date" placeholder="Fecha de Nacimiento" name="fecha"><br />
-  <input type="string" placeholder="Dirección" name="direccion"><br />
-  <input type="submit" value="Registrar"/>
+  
+  <input id="spaced" type="int" placeholder="Cedula" name="cedula"><br />
+  <input id="spaced" type="string" placeholder="Nombre" name="nombre"><br />
+  <input id="spaced" type="string" placeholder="Apellido" name="apellido"><br />
+  <input id="spaced" type="date" placeholder="Fecha de Nacimiento" name="fecha"><br />
+  <input id="spaced" type="string" placeholder="Dirección" name="direccion"><br />
+  <input id="spaced" type="submit" value="Registrar"/>
+  <br><br>
+  <a class="button" href="/Paciente"> Regresar </a>
 </form>
+</div>

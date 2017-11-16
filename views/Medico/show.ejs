@@ -7,20 +7,81 @@
 <h3><%= 'Fecha de Nacimiento: '+medico.fecha%></h1>
 <hr>
 <h4><%= 'Dirección: ' +medico.direccion %></h1>
+<style>
+
+  @import url('https://fonts.googleapis.com/css?family=Barlow');
+
+  html*{
+    font-family: Barlow, sans-serif;
+  }
+
+  body{
+  padding: 50px;
+  background-color:#00628B;
+  }
+
+
+  #container {
+  max-width: 100px;
+  min-width: 960px;
+  position: relative;
+  text-align:center;
+  margin-top: 1.75em;
+        margin-bottom: 2em;
+        margin: auto;
+  padding: 3em;
+  border: 5px double #000000;
+  border-color: #E6E6DC;
+  background-color: #7090A0; 
+  font-family: Barlow, sans-serif;
+  }
+
+  .button{
+  position: relative;
+  padding: 5px 20px;
+  margin: 0px 5px 5px 0px;
+  font-family:'Trebuchet MS', sans-serif;
+  float: left;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #FFF;
+  text-decoration: none;
+}
+.button{
+  background-color: #3498DB;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+}
+
+</style>
+
+<html>
+<body>
+<div id="container">
+<h1>Nombre: Minerva</h1>
+<hr>
+<h1>Apellido: Salas</h1>
+<hr>
+<h2>Cedula: 10788598</h1>
+<hr>
+<h3>Fecha de Nacimiento: Fri Mar 06 1970 00:00:00 GMT-0400 (Hora estándar de Venezuela)</h1>
+<hr>
+<h4>Dirección: Chacao</h1>
 <hr>
 
 
 <form action="/Especialidad/new" method="POST">
-  <input type="hidden" value= "<%= medico.id %>" name="medico">
+  <input type="hidden" value= "1" name="medico">
   <input type="submit" value= "Agregar Especialidad" />
 </form>
 
 <form action="/Horario/new" method="POST">
-  <input type="hidden" value= "<%= medico.id %>" name="medico">
+  <input type="hidden" value= "1" name="medico">
   <input type="submit" value= "Agregar Bloque" />
 </form>
-
-<h3> Horario</h3>
+</div>
+<div id="container">
+<h1> Horario</h1>
 <table>
 <tr>
   <th> ID </th>
@@ -29,15 +90,18 @@
   <th></th>
   <th></th>
 </tr>
-<% _.each(medico.horario,function(horario){ %>
-  <tr data=id="<%= horario.id %>" data-model="horario">
-  <td><%= horario.id %></td>
-  <td><%= horario.bloquehorario %></td>
+
+  <tr data=id="1" data-model="horario">
+  <td>1</td>
+  <td>lunes 8-10am</td>
 
 
-  <td><a href="Horario/show/<%= horario.id %>">Mostrar</a></td>
-  <td><a href="Horario/edit/<%= horario.id %>">Editar  </a></td>
-  <td><a href="Horario/destroy/<%= horario.id %>">Eliminar</a></td>
+  <td><a class="button" href="Horario/show/1">Mostrar</a></td>
+  <td><a class="button" href="Horario/edit/1">Editar  </a></td>
+  <td><a class="button" href="Horario/destroy/1">Eliminar</a></td>
 </tr>
-<% }) %>
+
 </table>
+</div>
+</body>
+</html>
