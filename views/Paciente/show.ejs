@@ -60,14 +60,14 @@ body{
 <hr>
 
 
-<form action="/Intervenciones/new" method="POST">
-  <input type="hidden" value= "<%= paciente.id %>" name="paciente">
 
-</form>
 </div>
 <div id="container">
 <h3> Intervenciones</h3>
+<form action="/Intervenciones/new" method="POST">
+  <input type="hidden" value= "<%= paciente.id %>" name="paciente">
 <input type="submit" value= "Agregar intervencion" />
+</form>
 <table>
 <tr>
   <th> ID </th>
