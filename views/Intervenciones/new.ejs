@@ -1,0 +1,12 @@
+<form action="/Intervenciones/create" method="POST">
+  <h2> Agregar Nueva Intervencion Para <%= paciente.nombre+" "+paciente.apellido %></h2>
+
+ <input type="hidden" name="paciente" value="<%-paciente.id %>"/>
+ <input type="radio" name="intervencion" value="traumatologia "> traumatologia
+ <input type="radio" name="intervencion" value="transplante"> transplante
+ <input type="radio" name="intervencion" value="neurocirugia"> neurocirugia
+  <input type="radio" name="intervencion" value="cirugia plastica"> cirugia plastica
+
+  <input type="submit" value="Agregar intervencion"/>
+
+</form>

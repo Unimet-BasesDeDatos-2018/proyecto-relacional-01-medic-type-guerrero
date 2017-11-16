@@ -28,7 +28,14 @@ module.exports = {
     direccion:{
       type: 'string'
     },
-
+    intervenciones:{
+      collection: 'intervenciones',
+      via:'paciente'
+    },
+    antecedentes:{
+      collection: 'antecedentes',
+      via:'paciente'
+    }
 
   }
 };

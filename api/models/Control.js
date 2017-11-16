@@ -18,7 +18,8 @@ module.exports = {
 
       cita:{
         type:'integer',
-        required:true
+        required:true,
+        unique:true
       },
       observaciones:{
         type: 'string'

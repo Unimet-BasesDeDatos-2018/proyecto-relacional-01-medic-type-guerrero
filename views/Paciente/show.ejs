@@ -40,7 +40,7 @@ body{
   padding: 3em;
   border: 5px double #000000;
   border-color: #012148;
-  background-color: #FBFFB0; 
+  background-color: #FBFFB0;
   font-family: Barlow, sans-serif;
 }
 
@@ -58,6 +58,42 @@ body{
 <hr>
 <h4><%= 'Dirección: ' +paciente.direccion %></h1>
 <hr>
+
+
+<form action="/Intervenciones/new" method="POST">
+  <input type="hidden" value= "<%= paciente.id %>" name="paciente">
+
+</form>
+</div>
+<div id="container">
+<h3> Intervenciones</h3>
+<input type="submit" value= "Agregar intervencion" />
+<table>
+<tr>
+  <th> ID </th>
+  <th> Intervenciones </th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+<% _.each(paciente.intervenciones,function(intervenciones){ %>
+  <tr data=id="<%= intervenciones.id %>" data-model="intervenciones">
+  <td><%= intervenciones.id %></td>
+  <td><%= intervenciones.intervencion %></td>
+
+  <td><a href="Paciente/destroy/<%= paciente.id %>">Eliminar</a></td>
+</tr>
+<% }) %>
+</table>
+<form action="/Antecedentes/new" method="POST">
+  <input type="hidden" value= "<%= paciente.id %>" name="paciente">
+  <input type="submit" value= "Agregar Antecedente" />
+</form>
+</div>
+<div id="container">
+<a class="button" href="/Paciente"> Regresar </a>
+<a class="button" href="/Paciente/edit/%=paciente.id%"> Editar </a>(help)
+</div>
 
 <a class="button" href="/Paciente"> Regresar </a>
 </div>
