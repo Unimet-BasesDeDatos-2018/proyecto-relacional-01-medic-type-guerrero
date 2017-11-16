@@ -18,16 +18,18 @@ create: function(req,res,next) {
 
 	});
 },
-		show: function(req,res,next) {
-			Paciente.findOne(req.param('id'),function pacienteEncontrado(err,paciente){
-				if (err) return next(err);
-				if (!paciente) return next();
-				res.view({
-paciente:paciente
-				});
-			});
+show: function(req,res,next) {
 
-		},
+	Paciente.findOne(req.param('id')).populateAll().exec(function(err,paciente){
+		if (err) return next(err);
+		if (!paciente) return next();
+		res.view({
+paciente:paciente
+		});
+	});
+
+}
+		,
 		index: function(req,res,next){
 			Paciente.find(function foundPaciente(err,paciente){
 				if (err) return next(err);

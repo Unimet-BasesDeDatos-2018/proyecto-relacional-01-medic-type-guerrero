@@ -1,0 +1,10 @@
+<form action="/Antecedentes/create" method="POST">
+  <h2> Agregar Los Antecedentes Para <%= paciente.nombre+" "+paciente.apellido %></h2>
+
+  <input type="hidden" name="paciente" value="<%-paciente.id %>"/>
+  <input type="string" placeholder="Escriba aqui su antecedente" name="antecedente"><br />
+
+  <input type="submit" value= "Agregar Antecedentes" />
+
+
+</form>
