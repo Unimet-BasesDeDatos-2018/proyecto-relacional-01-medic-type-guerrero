@@ -66,27 +66,26 @@ body{
 </style>
 
 <div id="container">
-<h3>Medicos</h3>
-<a class="button" href="/Medico/Registrar"> Agregar Medico </a>
+<h3>Horarios</h3>
 <a class="button" href="/"> Regresar </a>
 <br><br> <br>
 <table>
   <tr>
   <th>ID</th>
-  <th>Cedula</th>
-  <th>Nombre</th>
-  <th>Apellido</th>
+  <th>Bloque</th>
+  <th>Medico</th>
+  <th>Nothing</th>
 
   <th></th>
   <th></th>
   <th></th>
 </tr>
-<% _.each(medico,function(medico){ %>
-  <tr data=id="<%= medico.id %>" data-model="medico">
-  <td><%= medico.id %></td>
-  <td><%= medico.cedula %></td>
-  <td><%= medico.nombre %></td>
-  <td><%= medico.apellido %></td>
+<% _.each(horario,function(horario){ %>
+  <tr data=id="<%= horario.id %>" data-model="horario">
+  <td><%= horario.id %></td>
+  <td><%= horario.bloquehorario %></td>
+  <td></td>
+  <td>nothing</td>
 
   <td><a class="buttonsm" href="Medico/show/<%= medico.id %>">Mostrar</a></td>
   <td><a class="buttonsm" href="Medico/edit/<%= medico.id %>">Editar  </a></td>

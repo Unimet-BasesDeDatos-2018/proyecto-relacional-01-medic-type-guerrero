@@ -1,10 +1,73 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body{
+	padding: 50px;
+  background-color:#003471;
+}
+	#header{
+  font-family: Barlow', sans-serif;
+  color: #FBFFB0;
+  padding-left: 30%;
+}
+.button{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  font-family:'Trebuchet MS', sans-serif;
+  float: center;
+	border-radius: 10px;
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.button{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+#container {
+	max-width: 100px;
+	min-width: 960px;
+	position: relative;
+  text-align:left;
+	margin-top: 1.75em;
+        margin-bottom: 2em;
+        margin: auto;
+	padding: 3em;
+	border: 5px double #000000;
+	border-color: #012148;
+	background-color: #FBFFB0; 
+	font-family: Barlow, sans-serif;
+}
+
+img{
+	float:right;
+	width: 65%;
+	height: auto;
+}
+</style>
+
+<div id="container">
+<img id="img" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=750&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
 <form action="/Medico/create" method="post">
   <h2> Registrar Medico </h2>
-
+  <br><br>
   <input type="int" placeholder="Cedula" name="cedula"><br />
+  <br>
   <input type="string" placeholder="Nombre" name="nombre"><br />
+  <br>
   <input type="string" placeholder="Apellido" name="apellido"><br />
+  <br>
   <input type="date" placeholder="Fecha de Nacimiento" name="fecha"><br />
+  <br>
   <input type="string" placeholder="Dirección" name="direccion"><br />
+  <br>
   <input type="submit" value="Registrar"/>
 </form>
+<br>
+<a class="button" href="/Medico"> Regresar </a>
+</div>

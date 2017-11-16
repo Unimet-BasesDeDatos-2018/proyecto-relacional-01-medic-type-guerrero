@@ -37,4 +37,10 @@ module.exports = {
 				});
 			},
 
+			destroy: function(req,res,next){
+			Cita.destroy(req.param('id')).exec( function(){
+				res.redirect('/Cita');
+			});
+			}
+
 };

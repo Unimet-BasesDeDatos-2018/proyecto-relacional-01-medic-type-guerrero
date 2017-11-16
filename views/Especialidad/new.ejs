@@ -1,11 +1,69 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body{
+	padding: 50px;
+  background-color:#003471;
+}
+	#header{
+  font-family: Barlow', sans-serif;
+  color: #FBFFB0;
+  padding-left: 30%;
+}
+.button{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  font-family:'Trebuchet MS', sans-serif;
+  float: center;
+	border-radius: 10px;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.button{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+#container {
+	max-width: 100px;
+	min-width: 960px;
+	position: relative;
+  text-align:center;
+	margin-top: 1.75em;
+        margin-bottom: 2em;
+        margin: auto;
+	padding: 3em;
+	border: 5px double #000000;
+	border-color: #012148;
+	background-color: #FBFFB0; 
+	font-family: Barlow, sans-serif;
+}
+#spacey {
+	padding: 2px 0px 2px 0px;
+}
+
+
+</style>
+
+<div id="container">
 <form action="/Especialidad/create" method="POST">
   <h2> Agregar Nueva Especialidad Para <%= medico.nombre+" "+medico.apellido %></h2>
 
-  <input type="hidden" name="medico" value="<%-medico.id %>"/>
+  <input  type="hidden" name="medico" value="<%-medico.id %>"/>
+  <br>
   <input type="radio" name="especialidad" value="Pediatra"> Pediatra<br />
+  <br>
   <input type="radio" name="especialidad" value="Cardiologo"> Cardiologo<br />
+  <br>
   <input type="radio" name="especialidad" value="Internista"> Pediatra<br />  
+  <br>
   <input type="submit" value="agregar Especialidad"/>
 
 
 </form>
+</div>

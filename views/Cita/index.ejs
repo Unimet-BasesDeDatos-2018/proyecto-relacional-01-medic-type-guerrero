@@ -15,10 +15,10 @@ body{
   position: relative;
   padding: 10px 40px;
   margin: 0px 10px 10px 0px;
-  font-family:'Trebuchet MS', sans-serif;
-  float: center;
+  font-family:Barlow, sans-serif;
+  float: left;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 14px;
   color: #FFF;
   text-decoration: none;
 }
@@ -44,12 +44,18 @@ body{
   font-family: Barlow, sans-serif;
 }
 
+h1{
+  color: #73BCC1;
+  border: 2px double #003471;
+  background-color: #003471;
+  padding: 10px 0px 15px 0px;
+}
 
 </style>
 
 <div id="container">
 
-<h3>Citas</h3>
+<h1>Citas</h1>
 <a class="button" href="/Cita/Registrar"> Agregar Cita </a>
 <a class="button" href="/"> Regresar </a>
 <br><br> <br>
@@ -70,7 +76,7 @@ body{
   <td><%= cita.paciente %></td>
   <td><%= cita.medico %></td>
   <td><%= cita.horario %></td>
-
+  <td><a class="buttonsm" href="Cita/destroy/<%= cita.id %>">Eliminar</a></td>
 
 </tr>
 <% }) %>
