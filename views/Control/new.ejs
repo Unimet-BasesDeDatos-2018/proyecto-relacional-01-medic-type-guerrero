@@ -1,11 +1,13 @@
 <form action="/Control/create" method="POST">
   <h2> Control ></h2>
 
-  <input type="hidden" name="medico" value="<%-medico.id %>"/>
-  <input type="radio" name="especialidad" value="Pediatra"> Pediatra<br />
-  <input type="radio" name="especialidad" value="Cardiologo"> Cardiologo<br />
-  <input type="radio" name="especialidad" value="Internista"> Pediatra<br />
-  <input type="submit" value="agregar Especialidad"/>
 
+    <input type="int" placeholder="Cita" name="cita"><br />
+    <input type="string" placeholder="Observaciones" name="observaciones"><br />
+    <input type="string" placeholder="Altura" name="altura"><br />
+    <input type="string" placeholder="Peso" name="peso"><br />
+    <input type="date" placeholder="Fecha" name="fecha"><br />
+    <input type="string" placeholder="Diagnostico" name="diagnostico"><br />
+    <input type="submit" value="Registrar"/>
 
 </form>
