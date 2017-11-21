@@ -35,6 +35,18 @@ module.exports.routes = {
   '/': {
     view: 'static/home'
   },
+  '/Buscar/Home': {
+    view: 'Buscar/Home'
+  },
+   '/Buscar/Citas': {
+      view: 'Buscar/Citas'
+    },
+    '/Buscar/Historial': {
+      view: 'Buscar/Historial'
+    },
+
+
+
   //'get  /Paciente/show*' : 'PacienteController.show'
 
   /***************************************************************************
