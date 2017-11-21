@@ -43,7 +43,8 @@ module.exports = {
 			});
 		},
       buscar: function(req,res,next){
-				Cita.query('SELECT*FROM medictype.cita where paciente=21706486',function foundCita(err,rawResult){
+
+				Cita.query('SELECT*FROM medictype.cita where paciente='+req.body.cita,function foundCita(err,rawResult){
 					if (err) { return res.serverError(err); }
 
   sails.log(rawResult);

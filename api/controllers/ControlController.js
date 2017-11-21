@@ -25,4 +25,5 @@ control:control
 				});
 			});
 },
+
 };
