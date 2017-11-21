@@ -41,8 +41,20 @@ module.exports = {
 			Cita.destroy(req.param('id')).exec( function(){
 				res.redirect('/Cita');
 			});
-			}
+		},
+      buscar: function(req,res,next){
+				Cita.query('SELECT*FROM medictype.cita where paciente=21706486',function foundCita(err,rawResult){
+					if (err) { return res.serverError(err); }
 
+  sails.log(rawResult);
+  // (result format depends on the SQL query that was passed in, and the adapter you're using)
+
+  // Then parse the raw result and do whatever you like with it.
+
+  return res.json(rawResult);
+
+});
+			}
 
 
 };
